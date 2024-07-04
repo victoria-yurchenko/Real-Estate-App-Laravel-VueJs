@@ -11,22 +11,22 @@ class PropertyController extends Controller
     {
         $query = Property::query();
 
-        if ($request->has('name')) {
+        if ($request->filled('name')) {
             $query->where('name', 'like', '%' . $request->name . '%');
         }
-        if ($request->has('bedrooms')) {
+        if ($request->filled('bedrooms')) {
             $query->where('bedrooms', $request->bedrooms);
         }
-        if ($request->has('bathrooms')) {
+        if ($request->filled('bathrooms')) {
             $query->where('bathrooms', $request->bathrooms);
         }
-        if ($request->has('storeys')) {
+        if ($request->filled('storeys')) {
             $query->where('storeys', $request->storeys);
         }
-        if ($request->has('garages')) {
+        if ($request->filled('garages')) {
             $query->where('garages', $request->garages);
         }
-        if ($request->has('min_price') && $request->has('max_price')) {
+        if ($request->filled('min_price') && $request->filled('max_price')) {
             $query->whereBetween('price', [$request->min_price, $request->max_price]);
         }
     

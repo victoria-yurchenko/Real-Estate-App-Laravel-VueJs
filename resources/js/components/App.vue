@@ -63,7 +63,7 @@ export default {
         const searchProperties = async () => {
             loading.value = true;
             try {
-                const response = await axios.get('/api/properties', { params: searchForm.value });
+                const response = await axios.get('/properties', { params: searchForm.value });
                 properties.value = response.data;
             } catch (error) {
                 console.error(error);

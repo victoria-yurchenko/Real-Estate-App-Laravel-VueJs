@@ -1,5 +1,6 @@
 name,bedrooms,bathrooms,storeys,garages,price
 Cozy Cottage,2,1,1,0,150000
+Luxury Cottage,2,2,3,2,250000
 Spacious Villa,4,3,2,2,450000
 Urban Apartment,3,2,1,1,300000
 Luxury Mansion,5,4,3,3,1000000
