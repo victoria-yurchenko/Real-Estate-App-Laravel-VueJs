@@ -4,7 +4,7 @@
             <h1>Property Search</h1>
         </el-header>
         <el-main>
-            <el-form :model="searchForm" @submit.native.prevent="searchProperties">
+            <el-form :model="searchForm" @submit.native.prevent="searchProperties" label-width="120px">
                 <el-form-item label="Name">
                     <el-input v-model="searchForm.name"></el-input>
                 </el-form-item>
@@ -20,9 +20,11 @@
                 <el-form-item label="Garages">
                     <el-input v-model="searchForm.garages" type="number"></el-input>
                 </el-form-item>
-                <el-form-item label="Price Range">
-                    <el-input v-model="searchForm.min_price" placeholder="Min Price" type="number"></el-input>
-                    <el-input v-model="searchForm.max_price" placeholder="Max Price" type="number"></el-input>
+                <el-form-item label="Min Price">
+                    <el-input v-model="searchForm.min_price" type="number"></el-input>
+                </el-form-item>
+                <el-form-item label="Max Price">
+                    <el-input v-model="searchForm.max_price" type="number"></el-input>
                 </el-form-item>
                 <el-form-item>
                     <el-button type="primary" @click="searchProperties">Search</el-button>
@@ -80,5 +82,8 @@ export default {
 <style scoped>
 .el-container {
     padding: 20px;
+}
+.el-form-item {
+    margin-bottom: 20px;
 }
 </style>
